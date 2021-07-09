@@ -1,14 +1,14 @@
 %Parameters
-int: f;
-int: g;
-int: c;
-int: k;
+int: f; %Number of foxes
+int: g; %Number of geese
+int: c; %Number of ccorn
+int: k; %Boat capacity
 set of int: Cap = 0..k;
-int: t;
+int: t; %Number of trips
 set of int: Trips = 1..t;
-int: pf;
-int: pg;
-int: pc;
+int: pf; %Fox price
+int: pg; %Goose price
+int: pc; %Corn price
 set of int: maximum=0..max([f,g,c]);
 %Variables
 array[Trips] of var Cap:fox;
