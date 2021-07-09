@@ -74,9 +74,7 @@ constraint forall(i in 0..trips)(right_side_value[i]=side_fgc[i,2,1]*pf+side_fgc
 constraint forall(i in 1..trips where i mod 2=1)(right_side_value[i-1]<right_side_value[i]);
 
 constraint obj=right_side_value[trips];%Obj calculation
-%TEMPORARY
-constraint if (f=5 /\ g=1 /\ c=1) then fox = [0, 0, 2, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0] endif;
-%/\/\/\/\
+
 solve:: seq_search([
 int_search([trips], input_order, indomain_max, complete),
 int_search([ if p == 1 then fox[i] elseif p==2 then geese[i]  else corn[i] endif |i in 1..trips,p in 1..3 where i mod 2 =1], input_order, indomain_max, complete)
